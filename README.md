@@ -18,13 +18,13 @@
 python CNNConformer_ASR/main.py --path_jvs %path_jvs%
 ```
 
-### 3. JDCNetの学習
+### 3. JDCNet[^2]の学習
 
 ```
 python JDCNet/main.py --path_jvs %path_jvs% --package_HiFiGAN 
 ```
 
-### 4. StarGANv2-VCの学習
+### 4. StarGANv2-VC[^1]の学習
 
 `%package_HiFiGAN%`に[HiFi-GAN](https://github.com/jik876/hifi-gan)のルートディレクトリ名(ex. hifi-gan-master)を指定する.
 動的インポートを行うため, `%package_HiFiGAN%`はsys.pathに存在するパスに置かれている必要がある. なお本リポジトリのルートディレクトリはsys.pathに追加される.
@@ -45,13 +45,13 @@ python StarGANv2VC/main.py --path_jvs %path_jvs% --package_HiFiGAN %package_HiFi
 : https://github.com/yl4579/StarGANv2-VC
 
 [^1]: StarGANv2-VC<br>
-  paper: https://arxiv.org/abs/2107.10394#  
+  paper: https://arxiv.org/abs/2107.10394#<br>
   official implementation: https://github.com/yl4579/StarGANv2-VC
 
 [^2]: JDCNet<br>
-  paper: https://www.mdpi.com/2076-3417/9/7/1324
+  paper: https://www.mdpi.com/2076-3417/9/7/1324<br>
   official implementation: https://github.com/keums/melodyExtraction_JDC
 
 [^3]: HiFi-GAN<br>
-  paper: https://arxiv.org/abs/2010.05646
+  paper: https://arxiv.org/abs/2010.05646<br>
   official implementation: https://github.com/jik876/hifi-gan
