@@ -1,6 +1,6 @@
 # StarGANv2-VC
 このリポジトリは筆者が卒業研究で扱ったStarGANv2-VC[^1]および当手法で使用するJDCNet[^2]の**非公式**実装を含む就職活動用ポートフォリオである.
-公開に際して[JVS corpus](https://sites.google.com/site/shinnosuketakamichi/research-topics/jvs_corpus)をデータセットとして学習および推論を行うデモ整備を行った. 
+公開に際して[JVS corpus](https://sites.google.com/site/shinnosuketakamichi/research-topics/jvs_corpus)をデータセットとして学習および推論を行うデモの整備を行った. 
 
 ## 使用方法
 
