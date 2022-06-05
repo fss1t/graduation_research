@@ -7,7 +7,7 @@
 ### 1. HiFi-GAN[^3]の学習
 
 [HiFi-GANの公式実装](https://github.com/jik876/hifi-gan)に従ってボコーダの作成を行う. 
-このときのConfigは本リポジトリのHiFiGAN/config_v1.jsonを推奨する. 
+このときのconfigは本リポジトリのHiFiGAN/config_v1.jsonを推奨する. 
 これと異なる設定を行う場合もJVS corpusに合わせて`"sampling_rate": 24000`とする必要がある. 
 
 ### 2. CNNConformer_ASRの学習
@@ -29,7 +29,7 @@ python JDCNet/main.py --path_jvs %path_jvs%
 `%package_HiFiGAN%`に[HiFi-GAN](https://github.com/jik876/hifi-gan)のルートディレクトリ名(ex. hifi-gan-master)を指定する.
 動的インポートを行うため, `%package_HiFiGAN%`はsys.pathに存在するパスに置かれている必要がある. なお本リポジトリのルートディレクトリはsys.pathに追加される.
 
-`%checkpoint_HiFiGAN%`に1.で作成したGeneratorのチェックポイント(ex. g_01000000)のパスを指定する. 
+`%checkpoint_HiFiGAN%`に1.で作成したGeneratorのcheckpoint(ex. g_01000000)のパスを指定する. 
 
 ```
 python StarGANv2VC/main.py --path_jvs %path_jvs% --package_HiFiGAN %package_HiFiGAN% --checkpoint_HiFiGAN %checkpoint_HiFiGAN%
