@@ -1,0 +1,29 @@
+{
+    "seed": 1234,
+    "device":"cuda:0",
+    "num_workers": 4,
+
+    "epochs":200,
+    "valid_interval":1,
+
+    "batch_size": 8,
+    "batch_size_valid":16,
+
+    "lr": 0.000008,
+    "betas": [0.9,0.999],
+    "eps": 1e-8,
+    "weight_decay": 1e-4,
+
+    "epoch_warmup":1,
+    "epoch_switch":100,
+    "weight_lr_initial":1e-4,
+    "weight_lr_final":1e-4,
+
+    "weight_loss_vuv":0.1,
+
+    "f0_floor":100,
+    "f0_ceil":800,
+    "segment_size":49152,
+    "segment_size_valid":192000
+
+}

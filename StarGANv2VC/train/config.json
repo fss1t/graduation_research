@@ -1,0 +1,33 @@
+{
+    "seed": 1234,
+    "device":"cuda:0",
+    "num_workers": 4,
+
+    "epochs":200,
+    "valid_interval":1,
+    "save_interval":50,
+
+    "batch_size": 8,
+    "batch_size_valid":16,
+
+    "lr_generator": 0.0002,
+    "lr_style_encoder": 0.0002,
+    "lr_discriminator": 0.0001,
+    "lr_classifier": 0.000025,
+    "betas": [0.0,0.999],
+    "eps": 1e-9,
+    "weight_decay": 1e-4,
+
+    "epoch_start_classify":1001,
+
+    "weight_r1reg":1.0,
+    "weight_loss_g_advcls":0.05,
+    "weight_loss_cycle":10.0,
+    "weight_loss_f0":1.0,
+    "weight_loss_ppg":5.0,
+
+    "style_dim":64,
+    "segment_size":49152,
+    "segment_size_valid":192000
+
+}
