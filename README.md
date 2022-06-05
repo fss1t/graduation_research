@@ -21,7 +21,7 @@ python CNNConformer_ASR/main.py --path_jvs %path_jvs%
 ### 3. JDCNet[^2]の学習
 
 ```
-python JDCNet/main.py --path_jvs %path_jvs% --package_HiFiGAN 
+python JDCNet/main.py --path_jvs %path_jvs% 
 ```
 
 ### 4. StarGANv2-VC[^1]の学習
