@@ -18,11 +18,11 @@ def main(path_jvs):
     os.chdir(os.path.dirname(__file__))  # cd .
 
     path_jvs = Path(path_jvs).resolve()
-    # make_list_wav(path_jvs)
-    # make_list_lab(path_jvs)
-    # calc_norm()
-    # make_dict_phoneme()
-    # train()
+    make_list_wav(path_jvs)
+    make_list_lab(path_jvs)
+    calc_norm()
+    make_dict_phoneme()
+    train()
 
     list_wav = [path_jvs / "jvs068/nonpara30/wav24kHz16bit/TRAVEL1000_0929.wav"]
     predict(list_wav)
