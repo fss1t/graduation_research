@@ -24,17 +24,19 @@ def predict(list_wavin_name_wavref,
             path_dir_checkpoint=Path("../train/checkpoint"),
             path_config_data="../../HiFiGAN/config_v1.json",
             path_config_train="../train/config.json",
+            path_package_HiFiGAN=Path("../../HiFiGAN"),
             path_checkpoint_HiFiGAN=Path("../../HiFiGAN/checkpoint/g_01000000"),
             path_out=Path("./out"),
-            path_package_HiFiGAN=Path("../HiFiGAN"),
             device="cuda:0"):
-    # dynamic import
-
-    sys.path.append(str(path_package_HiFiGAN.resolve()))
-    Generator_HiFiGAN = import_module(f"{path_package_HiFiGAN.name}.models").Generator
-
     os.chdir(os.path.dirname(__file__))  # cd .
     print("--- predict ---")
+
+    # dynamic import
+
+    path_package_HiFiGAN = path_package_HiFiGAN.resolve()
+    sys.path.append(str(path_package_HiFiGAN.parent))
+    sys.path.append(str(path_package_HiFiGAN))
+    Generator_HiFiGAN = import_module(f"{path_package_HiFiGAN.name}.models").Generator
 
     # prepare directory
 

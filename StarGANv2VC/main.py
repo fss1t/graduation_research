@@ -33,7 +33,7 @@ def main(path_jvs, package_HiFiGAN, checkpoint_HiFiGAN):
                 [path_jvs / "jvs068/nonpara30/wav24kHz16bit/TRAVEL1000_0929.wav",
                  "jvs068", path_jvs / "jvs051/nonpara30/wav24kHz16bit/VOICEACTRESS100_014.wav"], ]
 
-    predict(list_wav, path_package_HiFiGAN=Path(package_HiFiGAN), path_checkpoint_HiFiGAN=Path(checkpoint_HiFiGAN).resolve())
+    predict(list_wav, path_package_HiFiGAN=Path(package_HiFiGAN).resolve(), path_checkpoint_HiFiGAN=Path(checkpoint_HiFiGAN).resolve())
 
 
 if __name__ == "__main__":
