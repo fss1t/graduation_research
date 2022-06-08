@@ -17,8 +17,6 @@ from predict.tool.standardizer import Standardizer
 from common.model.models import Generator, StyleEncoder
 from common.tool.melspectrogram import write_wav
 
-sys.path.append(str(Path(__file__).parents[2] / "HiFiGAN"))
-
 
 def predict(list_wavin_name_wavref,
             path_dir_param=Path("../dataset/param"),
@@ -31,6 +29,8 @@ def predict(list_wavin_name_wavref,
             package_HiFiGAN="HiFiGAN",
             device="cuda:0"):
     # dynamic import
+
+    sys.path.append(str(Path(__file__).parents[2] / package_HiFiGAN))
     Generator_HiFiGAN = import_module(f"{package_HiFiGAN}.models").Generator
 
     os.chdir(os.path.dirname(__file__))  # cd .
