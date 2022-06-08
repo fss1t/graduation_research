@@ -232,12 +232,12 @@ def train(path_dir_list=Path("../dataset/list"),
                 spe_output = generator(spe_input, style_target)
 
             spe_target.requires_grad_()
-            prob_real = discriminator(spe_target, num_target)
-            prob_fake = discriminator(spe_output, num_target)
+            reality_target = discriminator(spe_target, num_target)
+            reality_output = discriminator(spe_output, num_target)
 
-            loss_d_real = f_loss_adv(prob_real, 1)
-            reg_r1_d = f_reg_r1(prob_real, spe_target)
-            loss_d_fake = f_loss_adv(prob_fake, 0)
+            loss_d_real = f_loss_adv(reality_target, 1)
+            reg_r1_d = f_reg_r1(reality_target, spe_target)
+            loss_d_fake = f_loss_adv(reality_output, 0)
             loss_d = loss_d_real + loss_d_fake + h.weight_r1reg * reg_r1_d
 
             # backward discriminator
@@ -249,12 +249,12 @@ def train(path_dir_list=Path("../dataset/list"),
             if epoch >= h.epoch_start_classify:
                 # forward classifier
 
-                prob_input = classifier(spe_input)
-                prob_output = classifier(spe_output)
+                prob_speaker_input = classifier(spe_input)
+                prob_speaker_output = classifier(spe_output)
 
-                loss_c_input = f_celoss(prob_input, num_input)
-                loss_c_output = f_celoss(prob_output, num_input)
-                reg_r1_c = f_reg_r1(prob_input, spe_input)
+                loss_c_input = f_celoss(prob_speaker_input, num_input)
+                loss_c_output = f_celoss(prob_speaker_output, num_input)
+                reg_r1_c = f_reg_r1(prob_speaker_input, spe_input)
                 loss_c = loss_c_input + loss_c_output + h.weight_r1reg * reg_r1_c
 
                 # backward classifier
@@ -271,12 +271,12 @@ def train(path_dir_list=Path("../dataset/list"),
             style_target = style_encoder(spe_target, num_target)
             spe_output = generator(spe_input, style_target)
 
-            prob_fake = discriminator(spe_output, num_target)
-            loss_g_adv = f_loss_adv(prob_fake, 1)
+            reality_output = discriminator(spe_output, num_target)
+            loss_g_adv = f_loss_adv(reality_output, 1)
 
             if epoch >= h.epoch_start_classify:
-                prob_output = classifier(spe_output)
-                loss_g_advcls = f_celoss(prob_output, num_target)
+                prob_speaker_output = classifier(spe_output)
+                loss_g_advcls = f_celoss(prob_speaker_output, num_target)
             else:
                 loss_g_advcls = 0.0
 
