@@ -26,9 +26,7 @@ python JDCNet/main.py --path_jvs %path_jvs%
 
 ### 4. StarGANv2-VC[^1]の学習
 
-`%package_HiFiGAN%`に[HiFi-GAN](https://github.com/jik876/hifi-gan)のルートディレクトリ名(ex. hifi-gan-master)を指定する.
-動的インポートを行うため, `%package_HiFiGAN%`はsys.pathに存在するパスに置かれている必要がある. なお本リポジトリのルートディレクトリはsys.pathに追加される.
-
+`%package_HiFiGAN%`に[HiFi-GAN](https://github.com/jik876/hifi-gan)のルートディレクトリのパス(ex. ../hifi-gan-master)を指定する.
 `%checkpoint_HiFiGAN%`に1.で作成したGeneratorのcheckpoint(ex. g_01000000)のパスを指定する. 
 
 ```
