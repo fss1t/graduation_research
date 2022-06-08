@@ -3,7 +3,7 @@
     "device":"cuda:0",
     "num_workers": 4,
 
-    "epochs":120,
+    "epochs":150,
     "valid_interval":1,
 
     "batch_size": 1,

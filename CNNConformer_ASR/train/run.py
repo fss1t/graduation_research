@@ -152,7 +152,7 @@ def train(path_dir_list=Path("../dataset/list"),
 
     # start training
 
-    while(epoch <= h.epochs):
+    while(epoch < h.epochs):
         epoch += 1
         print(f"--- epoch {epoch} train ---")
 
