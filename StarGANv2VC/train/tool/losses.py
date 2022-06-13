@@ -34,7 +34,7 @@ def f_reg_r1(d_out, x_in):
 def f_f0_mean(f0, vuv):
     f0_sum = torch.sum(f0 * vuv, -1, True)
     vuv_sum = torch.sum(vuv, -1, True)
-    vuv_sum += vuv_sum == 0
+    vuv_sum += vuv_sum == 0 # prevent division by 0
 
     f0_mean = f0_sum / vuv_sum
     return f0_mean
